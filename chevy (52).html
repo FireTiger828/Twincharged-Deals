@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Twincharged Deals</title>
+
+	<!-- Favicon setup -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="TTD">
+<link rel="manifest" href="site.webmanifest">
+
+	<!-- This is the css -->
+	<style>
+		
+/*This is the class that makes the images pop up in the left of the screen when u click on the product*/
+.imgcntr{
+
+text-align:left;
+
+}
+
+/*This is the styling for te cart button*/
+.crtbtn{
+
+text-align:right;
+
+}
+
+/*This makes the back button not have a border or a background*/
+.backbtn{
+
+background-color:transparent;
+border:none;
+
+}
+
+.picselect{
+
+}
+
+/*This makes it so that when u hover over each of the pictures it gets more transparent*/
+.picselect:hover{
+
+opacity:80%;
+
+}
+
+	</style>
+
+<!-- This makes the pay btn work -->
+	<script src="https://www.paypal.com/sdk/js?client-id=BAARkrGanAXPitGosZ7RcmNZJXshb5GP8iJlKw6XV4KM7lfeWtvN-bqp0XPQ0xa4RHOZ1fspMpo860EaaY&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+
+<!-- This makes the view cart btn work -->
+	<script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="UHVL24F3FTDGU"></script>
+
+</head>
+
+<body style="background-color:black;">
+
+<!-- This is the view cart btn -->
+	<paypal-cart-button data-id="pp-view-cart" style="position:absolute; left:1150px;"></paypal-cart-button>
+
+<script>
+
+  cartPaypal.Cart({ id: "pp-view-cart" })
+
+</script>
+
+<h1 style="color:white; font-family:sans-serif; position:absolute; left:880px; top:200px;">Custom 1952 Chevy Truck </h1>
+
+<h1 style="color:white; font-family:sans-serif; position:absolute; left:960px; top:280px;">$3.00 USD</h1>
+
+<!-- This is the back btn -->
+<button onclick="location.href='chevy (mini).html'" class="backbtn"> <img src="back.png" height=50> </button>
+
+<section>
+
+<!-- This is the main pic of the custom chevy truck -->
+<div class="imgcntr">
+  <img id="mainImage" src="Twincharged Deals cars (mini)/Chevy/IMG_2097.jpg" height="680">
+
+<!-- This is the selection between the different pictures -->
+  <div style="margin-top: 20px;">
+
+    <img src="Twincharged Deals cars (mini)/Chevy/IMG_2097.jpg" height="100" class="picselect" onclick="changeImage(this)">
+
+    <img src="Twincharged Deals cars (mini)/Chevy/IMG_2098.jpg" height="100" class="picselect" onclick="changeImage(this)">
+
+    <img src="Twincharged Deals cars (mini)/Chevy/IMG_2099.jpg" height="100" class="picselect" onclick="changeImage(this)">
+
+    <img src="Twincharged Deals cars (mini)/Chevy/IMG_2100.jpg" height="100" class="picselect" onclick="changeImage(this)">
+
+    <img src="Twincharged Deals cars (mini)/Chevy/IMG_2101.jpg" height="100" class="picselect" onclick="changeImage(this)">
+
+  </div>
+
+</div>
+
+<!-- This makes the image selection work -->
+<script>
+
+  function changeImage(el) {
+    document.getElementById('mainImage').src = el.src;
+  }
+
+</script>
+
+</section>
+
+<section>
+
+<!-- This is the pay btn -->
+	<div id="paypal-container-WRTV6BYS6CHR2" style="margin-left:800px; margin-top:-500px;"></div>
+
+<script>
+
+  paypal.HostedButtons({
+    hostedButtonId: "WRTV6BYS6CHR2",
+  }).render("#paypal-container-WRTV6BYS6CHR2")
+
+</script>
+
+<!-- This is the add to cart btn -->
+<paypal-add-to-cart-button data-id="GPMJQZA9E9MK6" style="position:absolute; left:860px; top:530px; width:300px;"></paypal-add-to-cart-button>
+
+<script>
+
+  cartPaypal.AddToCart({ id: "GPMJQZA9E9MK6" })
+
+</script>
+
+</section>
+
+<p style="color:white; font-family:sans-serif; position:absolute; left:800px; top:650px;">NOTE: YOU CAN ONLY BUY 1 OF EACH PRODUCT, NOT MULTIPLE</p>
+
+</body>
+
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- This is the title of the website -->
+	<title>Twincharged Deals</title>
+
+	<!-- Favicon setup -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="TTD">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- This is the css -->
+	<style>
+
+		body {
+			background-color: black;
+			margin: 0;
+		}
+/*This is the red banner on the top of the screen*/
+		.banners {
+			color:red;
+			background-color:red;
+			text-align:center;
+			padding:15px;
+			margin-top:80px;
+		}
+
+/*This is the styling for the heading inside the banner*/
+		.BannerH {
+			text-align: center;
+			font-family: cursive;
+			color: white;
+		}
+
+/*This is the styling for the paragraph inside the banner*/
+		.BannerP {
+			color: white;
+			text-align: center;
+			font-family: sans-serif;
+		}
+
+/*This is the styling for the menu button*/
+		.menu {
+			height: 70px;
+			width: 65px;
+			background-color:transparent;
+			border:none;
+			cursor: pointer;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			z-index: 1001;
+		}
+
+/*This configures the menu image thats inside the button*/
+		.menu img {
+			width: 100%;
+			height: auto;
+		}
+
+/*This is the sidebar styling*/
+		.sidebar {
+			width: 250px;
+			height: 100%;
+			background-color: #111;
+			position: fixed;
+			top: 0;
+			left: -250px;
+			transition: left 0.3s;
+			z-index: 1000;
+			padding-top: 60px;
+		}
+
+/*This configures the text inside the sidebar*/
+		.sidebar a {
+			display: block;
+			padding: 16px;
+			text-decoration: none;
+			color: white;
+			font-family: sans-serif;
+		}
+
+/*This makes it so that when u hover over the words in the sidebar, their background color turns white.*/
+		.sidebar a:hover {
+			background-color: #575757;
+		}
+
+		.show-sidebar {
+			left: 0;
+		}
+
+/*This is the styling for the contact links*/
+.FooterLs{
+
+color:white;
+text-decoration:none;
+
+}
+
+/*This makes the email get underlined when u hover over it with ur cursor*/
+		.FooterLs:hover{
+
+text-decoration:underline;
+color:white;
+
+		}
+
+/*This is the styling for the text in the footer*/
+	.FooterP{
+
+color:white;
+text-align:center;
+
+	}
+
+	</style>
+
+</head>
+
+<body>
+
+<section>
+
+	<!-- These are the lines of code that say what is going to be inside of the menu and what its function is going to be -->
+	<div id="mySidebar" class="sidebar">
+
+		<a href="homepage.html">Home</a>
+
+		<a href="Mini (bp).html">Mini Models</a>
+
+		<a href="#">Medium Models</a>
+
+		<a href="#">Large Models</a>
+
+	</div>
+
+	<!-- Menu Button -->
+	<button class="menu" onclick="toggleSidebar()">
+
+		<img src="hamboger.png" alt="Menu">
+
+	</button>
+
+	<!-- Red Banner -->
+	<header class="banners" style="padding:20px;">
+
+		<img src="Twincharged Deals Logo.png" height=125>
+
+		<h1 class="BannerH" style="position:absolute; left:100px; margin-top:-70px;"> Welcome to Twincharged Deals!</h1>
+
+		<h1 class="BannerH" style="position:absolute; right:10px; margin-top:-65px;">Where we have any car you can think of</p>
+
+	</header>
+
+</section>
+
+<section>
+	<!-- Description Section -->
+	<p style="font-family:sans-serif; text-align:center; vertical-align:middle; color:white; font-size:25px; margin-bottom:250px">
+		At Twincharged Deals we have over 30 different car brands and each of our cars are high quality but still affordable. We have three different car sizes. We have mini, medium and large. Our mini cars are about 3 inches (about 7 centimeters) long, Our medium sized models are about 4.5-5 inches(about 13 centimeters) long, and our large models are about 8 inches (about 19.5-20 centimeters) long.
+	</p>
+
+</section>
+
+<section>
+<!-- This is the JavaScript that makes the menu button work -->
+	<script>
+
+		function toggleSidebar() {
+			const sidebar = document.getElementById("mySidebar");
+			sidebar.classList.toggle("show-sidebar");
+		}
+
+	</script>
+
+</section>
+
+<section>
+
+<!-- This is the banner on the botttom of the page -->
+	<footer style="color:red; background-color:red; padding:40px; margin-left:20px; margin-right:20px; margin-bottom:15px">
+
+<!-- This is the things in the banner -->
+<address>
+
+	<!-- This is all of the things inside of the "Creators" area in the footer -->
+	<p class="FooterP"> <b>Creators</b> <br>Author: Ethan Lozoya<br> Photographer: Ethan Lozoya<br>Programmer: Ethan Lozoya</p>
+
+<!-- This has my email and makes it so that when u click on it it sends u to a page that starts writing an email to the email below -->
+	<p class="FooterP"> <b>Contacts</b> <br> Email:<br> <a href="mailto:ethan@healmservices.com" class="FooterLs">ethan@healmservices.com</a> </p>
+
+<!-- This is the section has the links to the websites of the cars shown -->
+	<p class="FooterP"> <b>Websites of the cars shown</b> 
+		<br>
+
+<!-- This is the link to the Alpha Romeo website -->
+		<a hreflang="en" href="https://www.alfaromeousa.com/"class="FooterLs">Alfa Romeo</a>
+
+<!-- This is the link to the Aston Martin website -->
+		<a hreflang="en" href="https://www.astonmartin.com/en-us" class="FooterLs">Aston Martin</a>
+
+<!-- This is the link tothe bmw website -->
+		<a hreflang="en" href="https://www.bmwusa.com/?cid=GOOGLE_700000002949637_71700000117575706_58700008670572418_43700079514612865&tier=t1&ch=paid_search&veh=na&gclsrc=aw.ds&gad_source=1&gbraid=0AAAAAD87f5-LVQCUgnK-3uOh3hx_9YCjY&gclid=CjwKCAjwq7fABhB2EiwAwk-YbCM2VmUHx1Q8HdT1L7_b35H7SUW6QAlnAyewPImJjyA0Xf2iYyVmaBoCCksQAvD_BwE&gclsrc=aw.ds" class="FooterLs">BMW</a>
+
+<!-- This is the link to the bugatti website -->
+		<a hreflang="en" href="https://www.bugatti.com/" class="FooterLs">Bugatti</a>
+
+<!-- This is the link to the cadillac website -->
+		<a hreflang="en" href="https://www.cadillac.com/suvs/escalade?ppc=GOOGLE_3742233490_19718918326_345380686075_2386863978925&d_src=313715&d_adsrc=3876787&d_campaign=19718918326&d_site=GOOGLE&d_adgroup=345380686075&d_keyword=2025%20se%20hybrid&gclick=CjwKCAjwq7fABhB2EiwAwk-YbOuGMVrQ6VI3eaCgwMf9aK9s_S6-VT6yJjlrGuTEU31DUxQSqkEqeBoCzlIQAvD_BwE&gad_source=1&gbraid=0AAAAADf3ZAAAcFq9xtubsJjvFbslzo3HP&gclid=CjwKCAjwq7fABhB2EiwAwk-YbOuGMVrQ6VI3eaCgwMf9aK9s_S6-VT6yJjlrGuTEU31DUxQSqkEqeBoCzlIQAvD_BwE&gclsrc=aw.ds" class="FooterLs">Cadillac</a>
+
+<!-- This is the link to the chevy website -->
+		<a hreflang="en" href="https://www.chevrolet.com/shopping/configurator/electric/2024/silverado/silverado-ev/model?buildCode=&d_adgroup=149626777870&d_adsrc=3876783&d_campaign=19643823013&d_keyword=custom%20ev%20truck&d_site=GOOGLE&d_src=313715&gad_source=1&gbraid=0AAAAADf3ZADnHOyfoNMAfj1Vrd_kPEfaW&gclick=CjwKCAjwq7fABhB2EiwAwk-YbFJnqygKvEAlkgqn2rcE_fJUH0-IA0MQFywuTOpTRkizdHaiVKeofRoCKhkQAvD_BwE&gclid=CjwKCAjwq7fABhB2EiwAwk-YbFJnqygKvEAlkgqn2rcE_fJUH0-IA0MQFywuTOpTRkizdHaiVKeofRoCKhkQAvD_BwE&gclsrc=aw.ds&ppc=GOOGLE_7724415154_19643823013_149626777870_1946013551971&radius=645&zipCode=33082" class="FooterLs">Chevrolet</a>
+
+<!-- This is the link to the dodge website -->
+		<a hreflang="en" href="https://www.dodge.com/" class="FooterLs">Dodge</a>
+
+<!-- This is the link to the fiat website -->
+		<a hreflang="en" href="https://www.fiat.com/" class="FooterLs">Fiat</a>
+
+<!-- This is the link to the ford website -->
+		<a hreflang="en" href="https://www.ford.com/" class="FooterLs">Ford</a>
+
+<!-- This is the link to the gmc website -->
+		<a hreflang="en" href="https://www.gmc.com/certified-service?ppc=GOOGLE_4332480654_20667382227_154084419025_424305359025&d_src=313715&d_adsrc=4568510&d_campaign=20667382227&d_site=GOOGLE&d_adgroup=154084419025&d_keyword=gmc%20strut&gclick=CjwKCAjwq7fABhB2EiwAwk-YbL2j9BIN8h7EPqxO3UhPDfc99Ytp5J66jWIxS6vexGxiFjO-3yT1dhoCQ_0QAvD_BwE&gad_source=1&gbraid=0AAAAADOgbELzbJavTR-yQ1sQ0JSadN0eC&gclid=CjwKCAjwq7fABhB2EiwAwk-YbL2j9BIN8h7EPqxO3UhPDfc99Ytp5J66jWIxS6vexGxiFjO-3yT1dhoCQ_0QAvD_BwE&gclsrc=aw.ds" class="FooterLs">GMC</a>
+
+<!-- This is the link to the honda website -->
+		<a hreflang="en" href="https://www.honda.com/" class="FooterLs">Honda</a>
+
+<!-- This is the link to the jaguar website -->
+		<a hreflang="en" href="https://www.jaguarusa.com/all-models/f-pace/index.html?gad_source=1&gbraid=0AAAAA9a0DtTvEcAL2LR-Gnyfa0dH578z6&gclid=CjwKCAjwq7fABhB2EiwAwk-YbNT7Jw_0hnxgGAZPvoHSXw_NV8GK3PiOCrQ4v6o7wUSUiOkcR5W53xoC2SUQAvD_BwE&gclsrc=aw.ds" class="FooterLs">Jaguar</a>
+
+<!-- This is the link to the jeep website -->
+		<a hreflang="en" href="https://www.jeep.com/?sid=1037056&KWNM=jeep&KWID=43700050446084910&TR=1&channel=paidsearch&ds_rl=1273287&ds_rl=1267886&ds_rl=1272981&gad_source=1&gbraid=0AAAAAC2SnVV2kNiTOtChFofGogyXVE_a2&gclid=CjwKCAjwq7fABhB2EiwAwk-YbGNv97vzLm-FOmJ7xmnfS1YHFx1KKpzkw7N3BnHi8GKHGQDcDGfnxhoCGN0QAvD_BwE&gclsrc=aw.ds" class="FooterLs">Jeep</a>
+
+<!-- This is the link to the koenigsegg website -->
+		<a hreflang="en" href="https://www.koenigsegg.com/home" class="FooterLs">Koenigsegg</a>
+
+<!-- this is the link to the lamborghini website -->
+		<a hreflang="en" href="https://www.lamborghini.com/en-en" class="FooterLs">Lamborghini</a>
+
+<!-- this is the link to the lotus website -->
+		<a hreflang="en" href="https://www.lotuscars.com/en-US" class="FooterLs">Lotus</a>
+
+<!-- This is hte link to the lucid website -->
+		<a hreflang="en" href="https://lucidmotors.com/?utm_source=google&utm_medium=paid_search&utm_campaign=google_paid_search_en-us_acquisition_b_core_exact&platform=google&locale=en-us&initiative_a=acquisition&targeting_a=b&targeting_b=core&gad_source=1&gbraid=0AAAAACcj1QrCQ21HStrGw97CQHLNWYxBQ&gclid=CjwKCAjwq7fABhB2EiwAwk-YbCHAdxoE7sNqoSCqnAoLS4bYQjA3c2SAo9zhTNwB5CDvVTC99m9BVBoCU9kQAvD_BwE" class="FooterLs">Lucid</a>
+
+<!-- This is the link to the mazda website -->
+		<a hreflang="en" href="https://www.mazdausa.com/?semid=168931456458&providertag=MazdaSEM&servicetag=168931456458&k_keyword=mazda&k_matchtype=e&gclsrc=aw.ds&gad_source=1&gbraid=0AAAAADuNVTDC_hXdI1mclQQZN-X6dTjhb&gclid=CjwKCAjwq7fABhB2EiwAwk-YbM7GChTXbhOEMkDXqVrAt2EGE5ZFrOzNOMi0vvd8nISO-Z7FFtGIkhoCnfsQAvD_BwE" class="FooterLs">Mazda</a>
+
+<!-- This is the link to the mclaren website -->
+		<a hreflang="en" href="https://www.mclaren.com/" class="FooterLs">McLaren</a>
+
+<!-- this is the link to the mini website -->
+		<a hreflang="en" href="https://www.miniusa.com/tools/shopping/offers/convertible-lease.html?cid=GOOGLE_700000002949850_USBMI-24-018_ENG_FY24_FY_T2S-MIA_MINI_NA_NXTG_Cooper_CV_GOOG_S-BDGN_0_0_Convertible-F67_NA_NextGen_ds_agid=58700008858687708_ds_kids=p81594357866&cc=ps_T2_MT2S_ds_e=google_ds&gad_source=1&gbraid=0AAAAABQ2SMhRio7g9BIsH5jgG6y3JHPrq&gclid=CjwKCAjwq7fABhB2EiwAwk-YbM_nbbcYFfqBM6Jw5WHAmqKzG8LUzkCKAlpLSSeLB8ZbYpIl-l3DdhoCslUQAvD_BwE&gclsrc=aw.ds" class="FooterLs">Mini</a>
+
+<!-- This is the link to the mitsubishi website -->
+		<a hreflang="en" href="https://www.mitsubishicars.com/cars-and-suvs/outlander?utm_source=Google&utm_medium=paidsearch&utm_campaign=AO_AO_InMarket_Search_Outlander&gad_source=1&gbraid=0AAAAAC7tEmKOBiB9Ca3YBo6-PbDhb1NBI&gclid=CjwKCAjwq7fABhB2EiwAwk-YbK9gQXOBQiBkuPD0ux40rLIg2LrdsPhhdQpATm_K-QzgKT473wWYYhoCUo8QAvD_BwE&gclsrc=aw.ds" class="FooterLs">Mitsubishi</a>
+
+<!-- This is the link to the nissan website -->
+		<a hreflang="en" href="https://www.nissanusa.com/?dcp=psn.58700007915327075&ds_rl=1254058&gad_source=1&gbraid=0AAAAADMpndcTWFnmE_Uk23QnaP7JyyRPK&gclid=CjwKCAjwq7fABhB2EiwAwk-YbDjIQ7xZO6BIWW7cX_Ah3VkNQy6xcnUQINnsrLSaIce0Xytf9ERrIhoC2GoQAvD_BwE&gclsrc=aw.ds" class="FooterLs">Nissan</a>
+
+<!-- This is the link to the pagani website -->
+		<a hreflang="en" href="https://www.pagani.com/" class="FooterLs">Pagani</a>
+
+<!-- This is the link to the pininfarina website -->
+		<a hreflang="en" href="https://pininfarina.it/" class="FooterLs">Pininfarina</a>
+
+<!-- This is the link to the porsche website -->
+		<a hreflang="en" href="https://www.porsche.com/usa/" class="FooterLs">Porsche</a>
+
+<!-- This is the link to the renault website -->
+		<a hreflang="en" href="https://www.renaultgroup.com/en/" class="FooterLs">Renault</a>
+
+<!-- this is the link to the rimac website -->
+		<a hreflang="en" href="https://www.rimac-automobili.com/" class="FooterLs">Rimac</a>
+
+<!-- This is the link to the tesla website -->
+		<a hreflang="en" href="https://www.tesla.com/" class="FooterLs">Tesla</a>
+
+<!-- This is the link to the toyota website -->
+		<a hreflang="en" href="https://www.toyota.com/" class="FooterLs">Toyota</a>
+
+<!-- This is the link to the vw website -->
+		<a hreflang="en" href="https://www.vw.com/en.html?campaign=04583663_1000000004_vw-brand-terms-gm-retention-google&language=EN&adchan=seah&publisher=GADW&country=US&adplt=pseac&cpid=246093426&adpay=pd&adcr=vw%20usa&adgroup=15716903706&seatype=Branded&gad_source=1&gbraid=0AAAAAD7CiUIHMzjmC91yyFk2TkUTSL6z5&gclid=CjwKCAjwq7fABhB2EiwAwk-YbJ8acXdm1f-d8Hrk4XTN1LojnEY55Odqw0xdnFjtVxit0V-cDHq3IRoCwasQAvD_BwE&gclsrc=aw.ds" class="FooterLs">Volkswagen</a>
+
+	</p>
+
+</address>
+ 
+	</footer>
+
+</section>
+
+</body>
+</html>

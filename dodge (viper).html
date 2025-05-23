@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Twincharged Deals</title>
+
+  <!-- Favicon setup -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="TTD">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Styles -->
+  <style>
+
+    .imgcntr {
+      text-align: left;
+    }
+    .crtbtn {
+      text-align: right;
+    }
+    .backbtn {
+      background-color: transparent;
+      border: none;
+    }
+    .picselect:hover {
+      opacity: 80%;
+    }
+    .color {
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 8%;
+    }
+    .color:hover {
+      text-decoration: underline;
+    }
+
+    .productinfo{
+
+color:white; 
+font-family:sans-serif;
+
+    }
+
+  </style>
+
+  <!-- PayPal SDKs -->
+  <script src="https://www.paypal.com/sdk/js?client-id=BAARkrGanAXPitGosZ7RcmNZJXshb5GP8iJlKw6XV4KM7lfeWtvN-bqp0XPQ0xa4RHOZ1fspMpo860EaaY&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+  <script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="UHVL24F3FTDGU"></script>
+</head>
+
+<body style="background-color:black;">
+
+  <!-- Cart Button -->
+  <paypal-cart-button data-id="pp-view-cart" style="position:absolute; left:1150px;"></paypal-cart-button>
+
+  <script>cartPaypal.Cart({ id: "pp-view-cart" })</script>
+
+  <!-- Product Info -->
+  <h1 id="productTitle" style=" position:absolute; left:860px; top:200px;" class="productinfo">Dodge Viper (Purple)</h1>
+
+  <h1 id="productPrice" style=" position:absolute; left:940px; top:280px;" class="productinfo">$3.00 USD</h1>
+
+  <!-- Back Button -->
+  <button onclick="location.href='dodge (mini).html'" class="backbtn">
+    <img src="back.png" height="50">
+  </button>
+
+  <!-- Product Image + Thumbnails -->
+  <section>
+    <img id="mainImage" src="Twincharged Deals cars (mini)/Dodge/IMG_1801.jpg" height="680">
+    <div id="thumbnailContainer" style="margin-top: 20px;"></div>
+  </section>
+
+  <!-- Pay Now and Add to Cart buttons -->
+  <div id="paypal-container" style="margin-left:800px; margin-top:-500px;"></div>
+  
+  <div id="cart-container"></div>
+
+  <!-- Color buttons -->
+  <section>
+
+    <button onclick="selectRed()" style="position:absolute; left:955px; top:440px;" class="color">Red</button>
+
+    <button onclick="selectPurple()" style="position:absolute; top:440px; left:1020px;" class="color">Purple</button>
+
+    <p style="color:white; font-family:sans-serif; position:absolute; left:800px; top:650px;">NOTE: YOU CAN ONLY BUY 1 OF EACH PRODUCT, NOT MULTIPLE</p>
+
+  </section>
+
+  <script>
+  function updateProduct(color) {
+    const imageSets = {
+      red: [
+        "Twincharged Deals cars (mini)/Dodge/IMG_2173.jpg",
+        "Twincharged Deals cars (mini)/Dodge/IMG_2174.jpg",
+        "Twincharged Deals cars (mini)/Dodge/IMG_2175.jpg",
+        "Twincharged Deals cars (mini)/Dodge/IMG_2176.jpg"
+      ],
+      purple: [
+        "Twincharged Deals cars (mini)/Dodge/IMG_1801.jpg",
+        "Twincharged Deals cars (mini)/Dodge/IMG_1802.jpg",
+        "Twincharged Deals cars (mini)/Dodge/IMG_1803.jpg",
+        "Twincharged Deals cars (mini)/Dodge/IMG_1804.jpg"
+      ]
+    };
+
+    const payNowIds = {
+      red: "YKG85XEHMYZ7N",
+      purple: "3K8YWRDL5M4QS"
+    };
+
+    const cartButtonIds = {
+      red: "U8EGBK559ZEG6",
+      purple: "S7GTF3AVA4F56"
+    };
+
+    const productTitles = {
+      red: "Dodge Viper (Red)",
+      purple: "Dodge Viper (Purple)"
+    };
+
+    const productPrices = {
+      red: "$3.10 USD",
+      purple: "$3.00 USD"
+    };
+
+    // Update title + price
+    document.getElementById("productTitle").innerText = productTitles[color];
+    document.getElementById("productPrice").innerText = productPrices[color];
+
+    // Update main image
+    document.getElementById("mainImage").src = imageSets[color][0];
+
+    // Update thumbnails
+    const thumbnailContainer = document.getElementById("thumbnailContainer");
+    thumbnailContainer.innerHTML = "";
+    imageSets[color].forEach(src => {
+      const img = document.createElement("img");
+      img.src = src;
+      img.height = 100;
+      img.className = "picselect";
+      img.onclick = () => {
+        document.getElementById("mainImage").src = src;
+      };
+      thumbnailContainer.appendChild(img);
+    });
+
+    // ✅ Update PayPal Buy Now button (the fixed part)
+    const paypalContainer = document.getElementById("paypal-container");
+    paypalContainer.innerHTML = ""; // Clear previous button
+
+    const newPayNowDiv = document.createElement("div");
+    const uniquePayId = `paypal-buy-now-${color}-${Date.now()}`;
+    newPayNowDiv.id = uniquePayId;
+    paypalContainer.appendChild(newPayNowDiv);
+
+    paypal.HostedButtons({
+      hostedButtonId: payNowIds[color],
+    }).render(`#${uniquePayId}`);
+
+    // ✅ Update Add to Cart button
+    const cartContainer = document.getElementById("cart-container");
+    cartContainer.innerHTML = "";
+
+    const cartBtn = document.createElement("paypal-add-to-cart-button");
+    cartBtn.setAttribute("data-id", cartButtonIds[color]);
+    cartBtn.style.position = "absolute";
+    cartBtn.style.left = "860px";
+    cartBtn.style.top = "530px";
+    cartBtn.style.width = "300px";
+    cartContainer.appendChild(cartBtn);
+
+    cartPaypal.AddToCart({ id: cartButtonIds[color] });
+  }
+
+  function selectRed() {
+    updateProduct("red");
+  }
+
+  function selectPurple() {
+    updateProduct("purple");
+  }
+
+  // Default to purple on load
+  window.onload = () => {
+    updateProduct("purple");
+  };
+</script>
+
+
+</body>
+
+</html>

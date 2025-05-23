@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Twincharged Deals</title>
+
+	<!-- Favicon setup -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="TTD">
+<link rel="manifest" href="site.webmanifest">
+
+	<!-- This is the css -->
+	<style>
+		body {
+			background-color: black;
+			margin: 0;
+		}
+/*This is the red banner on the top of the screen*/
+		.banners {
+			color:red;
+			background-color:red;
+			text-align:center;
+			padding:15px;
+			margin-top:80px;
+		}
+
+/*This is the styling for the heading inside the banner*/
+		.BannerH {
+			text-align: center;
+			font-family: cursive;
+			color: white;
+		}
+
+/*This is the styling for the paragraph inside the banner*/
+		.BannerP {
+			color: white;
+			text-align: center;
+			font-family: sans-serif;
+		}
+
+/*This is the styling for the menu button*/
+		.menu {
+			height: 70px;
+			width: 65px;
+			background-color:transparent;
+			border: none;
+			cursor: pointer;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			z-index: 1001;
+		}
+
+/*This configures the menu image thats inside the button*/
+		.menu img {
+			width: 100%;
+			height: auto;
+		}
+
+/*This is the sidebar styling*/
+		.sidebar {
+			width: 250px;
+			height: 100%;
+			background-color: #111;
+			position: fixed;
+			top: 0;
+			left: -250px;
+			transition: left 0.3s;
+			z-index: 1000;
+			padding-top: 60px;
+		}
+
+/*This configures the text inside the sidebar*/
+		.sidebar a {
+			display: block;
+			padding: 16px;
+			text-decoration: none;
+			color: white;
+			font-family: sans-serif;
+		}
+
+/*This makes it so that when u hover over the words in the sidebar, their background color turns white.*/
+		.sidebar a:hover {
+			background-color: #575757;
+		}
+
+		.show-sidebar {
+			left: 0;
+		}
+
+		/*This is the styling for the contact links*/
+.FooterLs{
+
+color:white;
+text-decoration:none;
+
+}
+
+/*This makes the email get underlined when u hover over it with ur cursor*/
+		.FooterLs:hover{
+
+text-decoration:underline;
+color:white;
+
+		}
+
+/*This is the styling for the text in the footer*/
+	.FooterP{
+
+color:white;
+text-align:center;
+
+}
+
+.space{
+
+margin-top:50px;
+margin-left:30px;
+
+}
+
+.ModelP{
+
+color:white;
+font-family:sans-serif;
+font-size:20px;
+text-decoration:none;
+
+}
+
+.ModelP:hover{
+
+text-decoration:underline;
+
+}
+
+.price{
+
+font-family:sans-serif;
+color:white;
+
+}
+
+	</style>
+
+<!-- This makes the view cart btn work -->
+	<script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="UHVL24F3FTDGU"></script>
+
+</head>
+
+<body>
+
+<!-- This is the view cart btn -->
+	<paypal-cart-button data-id="pp-view-cart" style="position:absolute; left:1150px; top:20px;"></paypal-cart-button>
+
+<script>
+
+  cartPaypal.Cart({ id: "pp-view-cart" })
+
+</script>
+
+<section>
+
+	<!-- These are the lines of code that say what is going to be inside of the menu and what its function is going to be -->
+	<div id="mySidebar" class="sidebar">
+
+		<a href="homepage.html">Home</a>
+
+		<a href="Mini (bp).html">Mini Models</a>
+
+		<a href="#">Medium Models</a>
+
+		<a href="#">Large Models</a>
+
+	</div>
+
+	<!-- Menu Button -->
+	<button class="menu" onclick="toggleSidebar()">
+
+		<img src="hamboger.png" alt="Menu">
+
+	</button>
+
+	<!-- Red Banner -->
+	<header class="banners">
+
+		<h1 class="BannerH">Alfa Romeo</h1>
+
+</header>
+
+<!-- This is the Javascript that makes the menu button work -->
+	<script>
+
+		function toggleSidebar() {
+			const sidebar = document.getElementById("mySidebar");
+			sidebar.classList.toggle("show-sidebar");
+		}
+
+	</script>
+
+</section>
+
+<section>
+
+<div class="space">
+
+<img src="Twincharged Deals cars (mini)/Alpha Romeo/IMG_1940.jpg" height=300>
+
+<div style="margin-top:20px;">
+
+<a hreflang="en" href="Alfa Romeo (8C).html" class="ModelP" style="margin-left:75px;">Alfa Romeo 8C</a>
+
+<p class="price" style="margin-left:120px;">$3.00</p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
